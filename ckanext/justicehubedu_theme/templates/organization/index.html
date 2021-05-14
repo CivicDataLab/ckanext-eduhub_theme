@@ -1,0 +1,44 @@
+{% ckan_extends %}
+
+{% block subtitle %}{{ _('Data Contributors') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Data Contributors'), controller='organization', action='index', named_route=group_type + '_index' %}</li>
+{% endblock %}
+
+{% block pre_primary %}
+
+  {% block page_primary_action %}
+    {% if h.check_access('organization_create') %}
+      <div class="page_primary_action row">
+      {% link_for _('ADD DATA CONTRIBUTOR'), controller='organization', action='new', class_='btn btn-primary pull-right', named_route=group_type + '_new' %}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block organizations_search_form %}
+    {% snippet 'snippets/search_form.html',
+               form_id='organization-search-form',
+               type='organization',
+               query=c.q,
+               sorting_selected=c.sort_by_selected,
+               count=c.page.item_count,
+               placeholder=_('Search Data Contributors...'),
+               show_empty=request.params if c.page.items,
+               sorting = [(_('Name (A-Z)'),'title asc'), (_('Name (Z-A)'), 'title desc')],
+               count_box_title='DATA CONTRIBUTORS' %}
+  {% endblock %}
+{% endblock %}
+
+{% block primary_content %}
+{% block primary_content_inner %}
+  {% block organizations_list %}
+  {{ super() }}
+  {% endblock %}
+
+  {% block page_pagination %}
+      {{ super() }}
+  {% endblock %}
+
+{% endblock %}
+{% endblock %}

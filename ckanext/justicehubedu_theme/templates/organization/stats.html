@@ -1,0 +1,39 @@
+{% extends "organization/read.html" %}
+{% block groups_search_form %}
+{% endblock %}
+{% block organization_facets %}
+{% endblock %}
+
+{% block subtitle %}{{ _('Stats') }} - {{ c.group_dict.display_name }}{% endblock %}
+
+{% block page_primary_action %}
+{% endblock %}
+
+{% block primary_content_inner %}
+  {% block package_description %}
+    <h1 class="page-heading">
+        {{ _('STATS') }}
+    </h1>
+  {% endblock %}
+	<div class="row stats-box">
+        <div class="col-xs-4 col-sm-4">
+            <span class="primary-color stats-big">{{ c.group_dict.downloads }}{% if c.group_dict.downloads %}{{ _('+') }}{% endif %}</span>
+            <span>{{ _('DOWNLOADS') }}</span>
+        </div>
+        <div class="col-xs-3 col-xs-offset-1 col-sm-4">
+            <span class="primary-color stats-big">{{ c.group_dict.visits }}{% if c.group_dict.downloads %}{{ _('+') }}{% endif %}</span>
+            <span>{{ _('VISITS') }}</span>
+        </div>
+        <div class="col-xs-4 col-sm-4">
+            <span class="primary-color stats-big">{{ c.group_dict.num_followers }}{% if c.group_dict.downloads %}{{ _('+') }}{% endif %}</span>
+            <span>{{ _('FOLLOWERS') }}</span>
+        </div>
+    </div>
+    {% block page_pagination %}
+    {% endblock %}
+{% endblock %}
+{% block secondary_content %}
+  <div class="sidebar">
+      <h2>{{ c.group_dict.title }}</h2>
+  </div>
+{% endblock %}

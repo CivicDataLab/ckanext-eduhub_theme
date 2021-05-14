@@ -1,0 +1,43 @@
+{% ckan_extends %}
+
+{% block image %}
+<div class="image-box media-logo">
+    <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" class="img-responsive media-image">
+</div>
+{% endblock %}
+
+{% block title %}
+    <h3 class="media-heading">
+        {{ organization.display_name }}
+    {% if organization.signed_pledge %}
+        <img class="fa fa-certificate" src="{{ h.url_for_static('/images/signed_pledge_icon.png') }}" alt="signed_pledge" title="signed_pledge"></img>
+    {% endif %}
+    </h3>
+{% endblock %}
+
+{% block description %}
+{% endblock %}
+
+{% block datasets %}
+    {% if organization.package_count %}
+      <strong class="count">{{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}</strong>
+    {% else %}
+      <span class="count">{{ _('0 Datasets') }}</span>
+    {% endif %}
+{% endblock %}
+
+{% block capacity %}
+    {% if show_capacity and organization.capacity %}
+    <p><span class="label label-default">{{ h.roles_translated().get(organization.capacity, organization.capacity) }}</span></p>
+    {% endif %}
+{% endblock %}
+
+{% block link %}
+    <a href="{{ url }}" title="{{ _('View {organization_name}').format(organization_name=organization.display_name) }}" class="media-view">
+    <span>{{ _('View {organization_name}').format(organization_name=organization.display_name) }}</span>
+    </a>
+{% endblock %}
+
+{% if position is divisibleby 3 %}
+  <li class="clearfix js-hide"></li>
+{% endif %}

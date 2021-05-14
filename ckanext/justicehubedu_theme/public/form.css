@@ -1,0 +1,190 @@
+/*----------------- form style ----------------------*/
+.search-form, .dataset-form {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+/* --------------- tag remove icon ----------------- */
+.select2-container-multi .select2-search-choice-close {
+    left: auto;
+    margin: 5px 10px 5px 5px;
+    background: url('https://image.flaticon.com/icons/svg/458/458595.svg');
+}
+/* --------------- arrow icon in select dropdown --- */
+.select2-container .select2-choice .select2-arrow {
+    margin-top: 7px;
+    margin-right: 10px;
+    background: transparent;
+    box-shadow: none;
+    border-left: none;
+}
+.select2-container .select2-choice .select2-arrow b {
+    background-size: cover;
+}
+
+/*------------------ form control borders, backgrounds ----------------*/
+.square-border,
+.form-control,
+.form-control:focus,
+.controls input,
+.controls .form-control,
+.input-group-addon,
+.editor textarea,
+.editor .editor-info-block,
+.select2-drop,
+.select2-container .select2-choice,
+.select2-container .select2-choices {
+    border-radius: 0px;
+    border: 1px solid #f65940;
+}
+.btn-xs,
+.btn-xs:hover,
+.bg-clear.btn,
+.bg-clear.btn:active:hover,
+.controls .select2-container,
+.checkbox-other.select2-container {
+    border: none;
+}
+.btn-xs,
+.btn-xs:active:hover,
+.btn-xs:focus,
+.btn-xs:focus,
+.bg-clear,
+.bg-clear.active,
+.bg-clear.active:hover,
+.bg-clear:active,
+.bg-clear:focus,
+.bg-clear:hover,
+.bg-clear:active:hover,
+.bg-clear:active:focus,
+.bg-clear[disabled]:hover,
+.controls .select2-container > a.select2-choice,
+.checkbox-other.select2-container > .select2-choices {
+    background: transparent;
+    box-shadow: none;
+}
+.select2-container-active .select2-choices {
+    border-color: #f65940 !important; /* important because it gets overridden by dynamic class change */
+}
+.checkbox-other.select2-container .select2-choices {
+    border: none;
+    border-bottom: 1px solid #f65940;
+}
+
+/* -------------------- tags ------------------- */
+.select2-container-multi .select2-choices > li.select2-search-choice {
+    padding: 7px 25px;
+    border-radius: 30px;
+}
+.select2-container-multi .select2-choices > li.select2-search-choice:nth-child(2n) {
+    background-color: #f65940 !important;
+    background: none;
+}
+.select2-container-multi .select2-choices > li.select2-search-choice:nth-child(2n+1) {
+    background: none;
+    background-color: #403644;
+}
+
+/*------------------ form control layout ----------------*/
+.controls [class^="form-control"],
+.controls .select2-container,
+.controls .select2-container-multi,
+.controls .select2-container .select2-choice,
+.select2-container-multi .select2-choices {
+    height: 100%;
+}
+.controls .select2-container {
+    height: 50px;
+}
+fieldset.checkboxes label {
+    display: inline-block !important;
+}
+.select2-container {
+    padding: 0;
+}
+.checkbox-other {
+    width: 250px !important;
+}
+/* HACK: the logo remove button was floating right */
+.js .image-upload .btn-remove-url {
+    right: 35px;
+}
+/* HACK: since we're not updating the composite template */
+.composite-header {
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+/* ----------------- form control spacing ------------- */
+.form-actions {
+    margin-top: 20px;
+}
+.controls,
+.form-actions {
+    padding-right: 30px;
+}
+.controls .select2-container.select2-container-multi .select2-choices {
+    padding-top: 10px;
+}
+.controls input[class^="form-control"],
+.controls select.form-control,
+.controls .select2-container .select2-choice,
+.controls .select2-container .select2-choices {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.controls > .select2-container .select2-choices {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.controls .select2-container .select2-choices {
+    padding-left: 0;
+}
+.form-group,
+#resource-schema-buttons > .control-label,
+.dataset-form .input-group .form-control:first-child {
+    padding-top: 30px;
+    padding-left: 30px;
+    margin-bottom: 0;
+}
+.select2-container .select2-choice,
+.select2-container-multi .select2-choices {
+    padding: 0 0 0 12px;
+}
+fieldset.radios label > input {
+    margin-right: 5px;
+}
+fieldset.radios label,
+fieldset.checkboxes label {
+    padding-right: 40px;
+}
+.select2-search-choice > div {
+    margin-right: 15px;
+}
+input[type="date"].form-control,
+input[type="month"].form-control {
+    line-height: 28px;
+}
+
+/* ----------------------------- login form ------------------------------ */
+#user-register-form,
+.login-form {
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+
+/* ----------------------------- responsive ---------------------------- */
+@media (min-width: 320px) and (orientation: portrait) {
+    .search-form {
+        margin-bottom: 0;
+    }
+    .form-group {
+        padding-left: 10px;
+    }
+    .dataset-form {
+        padding-right: 0;
+    }
+    .page-header.module-content {
+        padding: 0 10px;
+    }
+}

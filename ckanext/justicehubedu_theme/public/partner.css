@@ -1,0 +1,96 @@
+/* -------------------------- org-item ----------------------- */
+.media-grid {
+    margin-top: 10px;
+    border: none;
+}
+.media-item {
+    width:210px;
+    margin-left: 24px;
+}
+.count,
+.media-item .media-heading {
+    line-height: 1;
+    margin-bottom: 0;
+}
+.media-logo {
+    height: 150px;
+}
+
+/* ------------------------- org-detail ---------------------- */
+.partner-links li {
+    margin-right: 0;
+}
+.partner-links.social-links .fa {
+    width: 31px;
+    height: 31px;
+}
+.partner-links.social-links .fa-twitter {
+    padding-left: 6px;
+}
+.partner-links.social-links .fa-facebook {
+    padding-top: 13px;
+    padding-left: 4px;
+}
+.partner-logo {
+    height: 200px;
+}
+.follow_button a {
+    margin-top: 10px;
+}
+
+/* ----------------------- members --------------------------- */
+.members-table > tbody > tr > td {
+    border-top: None;
+    padding-top: 35px;
+    vertical-align: middle;
+}
+.member_media > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.member_media > a {
+    padding-left: 10px;
+    
+}
+.member_action .delete {
+    border-radius: 25px;
+    padding: 3px 6px;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+/*----------------- org-edit dataset ----------------------*/
+.btn-icon {
+    border:None;
+    padding: 0;
+}
+.table thead tr th.table-actions {
+    padding-left: 15px;
+}
+.btn-icon:hover{
+    background: #ffffff;
+}
+.partner-dataset-table td.context {
+    padding-left: 20px;
+}
+/* -------------------------------------- Mobile adjustments ----------------------------- */
+@media (min-width:320px) and (orientation: portrait) {
+    .media-item {
+        width: 40%;
+    }
+    .media-logo {
+        height: 80px;
+    }
+    .img-responsive {
+        max-width: 75%;
+    }
+    .member_media > img {
+        width: auto;
+        height: auto;
+    }
+    .members-table > thead > tr > th,
+    .members-table > tbody > tr > td {
+        padding: 10px;
+    }
+}

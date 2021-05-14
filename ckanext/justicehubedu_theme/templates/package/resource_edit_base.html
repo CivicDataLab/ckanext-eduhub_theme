@@ -1,0 +1,55 @@
+{% ckan_extends %}
+
+{% set logged_in = true if c.userobj else false %}
+{% set res = c.resource %}
+
+{% block breadcrumb_content_selected %}{% endblock %}
+
+{% block breadcrumb_content %}
+  {{ super() }}
+  {% if res %}
+    <li>{% link_for h.resource_display_name(res)|truncate(30), controller='package', action='resource_read', id=pkg.name, resource_id=res.id %}</li>
+    <li{% block breadcrumb_edit_selected %} class="active"{% endblock %}><a href="">{{ _('Edit') }}</a></li>
+  {% endif %}
+{% endblock %} 
+
+{% block content_action %}
+{% endblock %}
+
+{% block pre_primary %}
+<div class="col-xs-12 row top-section"></div>
+{% endblock %}
+
+{% block content_primary_nav %}
+  {{ h.build_nav_icon('resource_edit', _('EDIT RESOURCE'), id=pkg.name, resource_id=res.id) }}
+  {% block inner_primary_nav %}{% endblock %}
+  <!--FIXME: Removing for Alpha -->
+  {#{ h.build_nav_icon('views', _('Views'), id=pkg.name, resource_id=res.id) }#}
+
+  <div class="content_action">
+      {% link_for _('ALL RESOURCES'), controller='package', action='resources', id=pkg.name, class_='btn btn-default', icon='arrow-left' %}
+      {% if res %}
+        {% link_for _('VIEW'), controller='package', action='resource_read', id=pkg.name, resource_id=res.id, class_='btn btn-default' %}
+      {% endif %}
+      {% if res.id %}
+        {% if h.check_access('resource_delete', {'id': res.id})  %}
+          <a class="btn btn-danger" href="{% url_for controller='package', action='resource_delete', resource_id=res.id, id=pkg.name %}" data-module="confirm-action" data-module-content="{{ _('Are you sure you want to delete this resource?') }}">{% block delete_button_text %}{{ _('DELETE') }}{% endblock %}</a>
+        {% endif %}
+      {% endif %}
+  </div>
+
+{% endblock %}
+
+{% block primary_content_inner %}
+  <h1 class="hide-heading">{% block form_title %}{{ _('Edit resource') }}{% endblock %}</h1>
+  {% block form %}{% endblock %}
+{% endblock %}
+
+{% block secondary_content %}
+  {% snippet 'package/snippets/resource_info.html', res=res %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {% resource 'vendor/fileupload' %}
+{% endblock %}
