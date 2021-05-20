@@ -81,7 +81,6 @@ setup(
     entry_points='''
         [ckan.plugins]
         eduhub_theme=ckanext.eduhub_theme.plugin:eduhub_themePlugin
-
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
     ''',
