@@ -2,7 +2,7 @@
     <h1 class="page-heading">{{ _('EXTERNAL LINKS') }}</h1>
 </div>
 {% if pkg_dict.links %}
-    {% set links = h.justicehub_theme_parse_json(pkg_dict.links) %}
+    {% set links = h.eduhub_theme_parse_json(pkg_dict.links) %}
     {% for item in links %}
        <dl class="dl-horizontal links-list">
       {% set item = h.composite_get_as_dict(item) %}

@@ -1,8 +1,8 @@
 {% ckan_extends %}
 
 {% block content %}
-{% resource 'justicehub_theme/exploredatasets/package_item.css' %}
-{% resource 'justicehub_theme/package_item.js' %}
+{% resource 'eduhub_theme/exploredatasets/package_item.css' %}
+{% resource 'eduhub_theme/package_item.js' %}
 <div class="dataset-content">
 
     <div class="row package-item-row">
@@ -117,7 +117,7 @@
         <div class="col col-md-5">
             {% block downloads %}
             <div class="downloads">
-                <span>{{ h.justicehub_theme_get_package_avg_downloads(package) }}{{ _('+') }}</span>
+                <span>{{ h.eduhub_theme_get_package_avg_downloads(package) }}{{ _('+') }}</span>
                 <span>{{ _('Downloads') }}</span>
             </div>
             {% endblock %}

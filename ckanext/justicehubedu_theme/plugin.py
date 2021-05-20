@@ -1,5 +1,5 @@
-import ckanext.justicehub_theme.logic.action as jh_action
-from ckanext.justicehub_theme.lib import helpers
+import ckanext.eduhub_theme.logic.action as jh_action
+from ckanext.eduhub_theme.lib import helpers
 
 import ckan.model as model
 import ckan.plugins as plugins
@@ -7,7 +7,7 @@ import ckan.plugins.toolkit as toolkit
 from ckan.common import c
 
 
-class Justicehub_ThemePlugin(plugins.SingletonPlugin):
+class eduhub_themePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IRoutes, inherit=True)
@@ -19,7 +19,7 @@ class Justicehub_ThemePlugin(plugins.SingletonPlugin):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic', 'justicehub_theme')
+        toolkit.add_resource('fanstatic', 'eduhub_theme')
 
     # ITemplateHelpers
 
@@ -31,15 +31,15 @@ class Justicehub_ThemePlugin(plugins.SingletonPlugin):
         # extension they belong to, to avoid clashing with functions from
         # other extensions.
         return {
-            'justicehub_theme_get_package_avg_downloads': helpers.get_package_avg_downloads,
-            'justicehub_theme_package_activity_stream': helpers.package_activity_stream,
-            'justicehub_theme_parse_json': helpers.parse_json,
-            'justicehub_theme_get_assignee_user': helpers.get_assignee_user,
-            'justicehub_theme_issue_vars': helpers.issues_vars,
-            'justicehub_theme_is_org_admin': helpers.is_org_admin,
-            'justicehub_theme_get_popular_groups': helpers.get_popular_groups,
-            'justicehub_theme_pop_zip_resource': helpers.pop_zip_resource,
-	    'justicehub_theme_show_linked_user': helpers.show_linked_user
+            'eduhub_theme_get_package_avg_downloads': helpers.get_package_avg_downloads,
+            'eduhub_theme_package_activity_stream': helpers.package_activity_stream,
+            'eduhub_theme_parse_json': helpers.parse_json,
+            'eduhub_theme_get_assignee_user': helpers.get_assignee_user,
+            'eduhub_theme_issue_vars': helpers.issues_vars,
+            'eduhub_theme_is_org_admin': helpers.is_org_admin,
+            'eduhub_theme_get_popular_groups': helpers.get_popular_groups,
+            'eduhub_theme_pop_zip_resource': helpers.pop_zip_resource,
+	    'eduhub_theme_show_linked_user': helpers.show_linked_user
         }
 
     #IActions
@@ -117,22 +117,22 @@ class Justicehub_ThemePlugin(plugins.SingletonPlugin):
     # IRoute
     def after_map(self, map):
         map.connect('jhorg_members', '/jhorg/members/{id}',
-                    controller='ckanext.justicehub_theme.controllers:JHOrgController',
+                    controller='ckanext.eduhub_theme.controllers:JHOrgController',
                     action='members')
         map.connect('jhorg_stats', '/jhorg/stats/{id}',
-                    controller='ckanext.justicehub_theme.controllers:JHOrgController',
+                    controller='ckanext.eduhub_theme.controllers:JHOrgController',
                     action='org_stats')
         map.connect('jhsubscribe', '/subscribe',
-                    controller='ckanext.justicehub_theme.controllers:SubscribeController',
+                    controller='ckanext.eduhub_theme.controllers:SubscribeController',
                     action='subscribe')
         map.connect('jhupload', '/upload',
-                    controller='ckanext.justicehub_theme.controllers:SubscribeController',
+                    controller='ckanext.eduhub_theme.controllers:SubscribeController',
                     action='upload')
         map.connect('jhdataset', '/dataset',
-                    controller='ckanext.justicehub_theme.controllers.dataset:PackageNewController',
+                    controller='ckanext.eduhub_theme.controllers.dataset:PackageNewController',
                     action='search')
         map.connect('jhreaduser', '/user/show/{id}',
-                    controller='ckanext.justicehub_theme.controllers.dataset:UserNewController',
+                    controller='ckanext.eduhub_theme.controllers.dataset:UserNewController',
                     action='read')
 
 
@@ -140,19 +140,19 @@ class Justicehub_ThemePlugin(plugins.SingletonPlugin):
     
     def before_map(self, map):
         map.connect('jhupload', '/upload',
-                    controller='ckanext.justicehub_theme.controllers:SubscribeController',
+                    controller='ckanext.eduhub_theme.controllers:SubscribeController',
                     action='upload')
         map.connect('jhorg_members', '/organization/members/{id}',
-                    controller='ckanext.justicehub_theme.controllers:JHOrgController',
+                    controller='ckanext.eduhub_theme.controllers:JHOrgController',
                     action='members')
         map.connect('jhorg_stats', '/jhorg/stats/{id}',
-                    controller='ckanext.justicehub_theme.controllers:JHOrgController',
+                    controller='ckanext.eduhub_theme.controllers:JHOrgController',
                     action='org_stats')
         map.connect('jhsubscribe', '/subscribe',
-                    controller='ckanext.justicehub_theme.controllers:SubscribeController',
+                    controller='ckanext.eduhub_theme.controllers:SubscribeController',
                     action='subscribe')
         map.connect('jhdataset', '/dataset',
-                    controller='ckanext.justicehub_theme.controllers.dataset:PackageNewController',
+                    controller='ckanext.eduhub_theme.controllers.dataset:PackageNewController',
                     action='search')
 
 

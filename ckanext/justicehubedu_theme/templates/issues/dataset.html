@@ -2,7 +2,7 @@
 
 {% set filters = h.get_issue_filter_types() %}
 {% set issues_per_page = h.get_issues_per_page() %}
-{% set extra_vars = h.justicehub_theme_issue_vars(pkg.id, request) %}
+{% set extra_vars = h.eduhub_theme_issue_vars(pkg.id, request) %}
 {% set pagination = extra_vars.pagination %}
 {% set issues = extra_vars.issues %}
 
@@ -49,7 +49,7 @@
                    </div>
                    <div class="col col-sm-2 col-xs-12">
                    {% if issue.assignee_id %}
-                       {{ h.gravatar(h.justicehub_theme_get_assignee_user(issue.assignee_id).email_hash, size=32) }}
+                       {{ h.gravatar(h.eduhub_theme_get_assignee_user(issue.assignee_id).email_hash, size=32) }}
                    {% endif %}
                    </div>
                </div>

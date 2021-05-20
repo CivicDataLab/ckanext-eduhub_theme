@@ -16,7 +16,7 @@
         <ul class="user-list">
           {% block users_list_inner %}
             {% for user in page.items %}
-              <li>{{ h.justicehub_theme_show_linked_user(user['name'], maxlength=20) }}</li>
+              <li>{{ h.eduhub_theme_show_linked_user(user['name'], maxlength=20) }}</li>
             {% endfor %}
           {% endblock %}
         </ul>

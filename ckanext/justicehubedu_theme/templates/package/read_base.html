@@ -8,7 +8,7 @@
 
 
 {% block pre_primary %}
-{% resource 'justicehub_theme/dataset/dataset.css' %}
+{% resource 'eduhub_theme/dataset/dataset.css' %}
 {% endblock %}
 
 
@@ -57,7 +57,7 @@
             <h3>Ownership</h3>
         </div>
         <div class="body">
-            {% set owners = h.justicehub_theme_parse_json(pkg.publisher_contacts or '[]') %}
+            {% set owners = h.eduhub_theme_parse_json(pkg.publisher_contacts or '[]') %}
             {% for owner in owners %}
                 {% if owner['name'] %}
                 <div style="margin-bottom: 10px;">
@@ -97,7 +97,7 @@
             <h3>Reference Links</h3>
         </div>
         <div class="body">
-            {% set links = h.justicehub_theme_parse_json(pkg.links or '[]') %}
+            {% set links = h.eduhub_theme_parse_json(pkg.links or '[]') %}
             <ol>
             {% for link in links %}
                 {% set ref_link = link['link'] if 'http' in link['link']  else 'https://'+link['link'] %}
@@ -182,7 +182,7 @@
 		  {% if pkg.resources %}
 		    <div class="btn-group" style="float:right; margin-top: -7px;">
 
-		      {% set zip_res = h.justicehub_theme_pop_zip_resource(pkg) %}
+		      {% set zip_res = h.eduhub_theme_pop_zip_resource(pkg) %}
 		      {% if zip_res %}
 			<a class="btn btn-primary resource-url-analytics resource-type-{{ zip_res.resource_type }}" href="{{ zip_res.url }}">
 		      {% else %}
@@ -232,7 +232,7 @@
     <article class="module">
 	    {% block page_header %}
 		<div class="row page-header">
-		    <ul class="nav nav-tabs" data-module="justicehub_theme_tabs">
+		    <ul class="nav nav-tabs" data-module="eduhub_theme_tabs">
 			{% block content_primary_nav %}
 			    {{ h.build_nav_icon('dataset_groups', _('Groups'), id=pkg.name)}} 
 			{% endblock %}

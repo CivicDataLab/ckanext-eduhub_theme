@@ -59,7 +59,7 @@ $('.stats-big').each(function () {
 });
 
 // bootstrap nav-tabs.
-ckan.module('justicehub_theme_tabs', function ($) {
+ckan.module('eduhub_theme_tabs', function ($) {
     return {
         initialize: function () {
 
@@ -88,7 +88,7 @@ ckan.module('justicehub_theme_tabs', function ($) {
 });
 
 // subscribe to mailing.
-ckan.module('justicehub_theme_subscribe', function ($) {
+ckan.module('eduhub_theme_subscribe', function ($) {
     return {
         initialize: function () {
             $('[data-toggle="popover"]').popover();

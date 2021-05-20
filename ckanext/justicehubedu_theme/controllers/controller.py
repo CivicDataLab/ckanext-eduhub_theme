@@ -1,7 +1,7 @@
 import json
 
 import requests
-from ckanext.justicehub_theme.lib import helpers
+from ckanext.eduhub_theme.lib import helpers
 from pylons import config
 
 import ckan.controllers.organization as org

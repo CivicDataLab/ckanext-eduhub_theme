@@ -1,5 +1,5 @@
-{% ckan_extends %} {% resource 'justicehub_theme/exploredatasets/search.css' %} {% set groups =
-h.justicehub_theme_get_popular_groups() %} {% block pre_primary %} {% block page_primary_action %} {% if
+{% ckan_extends %} {% resource 'eduhub_theme/exploredatasets/search.css' %} {% set groups =
+h.eduhub_theme_get_popular_groups() %} {% block pre_primary %} {% block page_primary_action %} {% if
 h.check_access('package_create') %} {% endif %}
 <div class="page_primary_action row" style="margin: 0">
   <section class="search-landing">
@@ -78,7 +78,7 @@ h.check_access('package_create') %} {% endif %}
 {% block secondary %}
 <aside class="secondary col-sm-3">
   {% block secondary_content %}
-  {% resource 'justicehub_theme/exploredatasets/search.css' %}
+  {% resource 'eduhub_theme/exploredatasets/search.css' %}
   <div class="filters search-filters">
       {% for facet in c.facet_titles %} {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet)
       }} {% endfor %}
@@ -86,5 +86,5 @@ h.check_access('package_create') %} {% endif %}
   </div>
   {% endblock %}
 </aside>
-{% resource 'justicehub_theme/exploredatasets/search.js' %}
+{% resource 'eduhub_theme/exploredatasets/search.js' %}
 {% endblock %}

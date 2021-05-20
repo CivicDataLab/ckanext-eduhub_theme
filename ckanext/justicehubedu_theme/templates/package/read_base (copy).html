@@ -65,7 +65,7 @@
     <div class="row">
         <div class="col col-sm-6 col-xs-12 text-center">
             {# <span class="col-xs-4 col-sm-3">
-                {% set downloads = h.justicehub_theme_get_package_avg_downloads(pkg) %}
+                {% set downloads = h.eduhub_theme_get_package_avg_downloads(pkg) %}
                 <span class="primary-color">{{ downloads }}{% if downloads %}{{ _('+') }}{% endif %}</span>
                 <span>{{ _('Downloads') }}</span>
             </span> #}
@@ -158,7 +158,7 @@
     <aside class="secondary col-sm-3 col-xs-12 sidebar">
         <h2>ACTIVITY</h2>
         {% block activity_stream %}
-        <div class="activity-item">{{ h.justicehub_theme_package_activity_stream(pkg.id) }}</div>
+        <div class="activity-item">{{ h.eduhub_theme_package_activity_stream(pkg.id) }}</div>
         {% endblock %}
     </aside>
     {% endblock %}
@@ -174,7 +174,7 @@
 
 {% block page_header %}
 <div class="row page-header">
-    <ul class="nav nav-tabs" data-module="justicehub_theme_tabs">
+    <ul class="nav nav-tabs" data-module="eduhub_theme_tabs">
         {% block content_primary_nav %}
 
         <li class="active">

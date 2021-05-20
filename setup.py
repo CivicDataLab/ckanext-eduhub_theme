@@ -10,22 +10,22 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='''ckanext-justicehub_theme''',
+    name='''ckanext-eduhub_theme''',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
     version='0.0.1',
 
-    description='''Theme for JusticeHub''',
+    description='''Theme for EduHub''',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/justicehub-in/ckanext-justicehub_theme',
+    url='https://github.com/CivicDataLab/ckanext-eduhub_theme',
 
     # Author details
-    author='''Deepthi Chand''',
-    author_email='''deepthi@civicdatalab.in''',
+    author='''CivicDataLab''',
+    author_email='''info@civicdatalab.in''',
 
     # Choose your license
     license='AGPL',
@@ -48,7 +48,7 @@ setup(
 
 
     # What does your project relate to?
-    keywords='''CKAN JusticeHub theme''',
+    keywords='''CKAN EduHub theme''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
@@ -80,7 +80,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        justicehub_theme=ckanext.justicehub_theme.plugin:Justicehub_ThemePlugin
+        eduhub_theme=ckanext.eduhub_theme.plugin:eduhub_themePlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan

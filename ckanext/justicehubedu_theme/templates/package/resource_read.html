@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block resource_inner %}
-{% resource 'justicehub_theme/dataset/dataset.css' %}
-{% resource 'justicehub_theme/dataset/resource.css' %}
+{% resource 'eduhub_theme/dataset/dataset.css' %}
+{% resource 'eduhub_theme/dataset/resource.css' %}
     <div class="custom-container">
 
     {% block resource_content %}
@@ -28,7 +28,7 @@
                 <h3>Ownership</h3>
             </div>
             <div class="body">
-                {% set owners = h.justicehub_theme_parse_json(pkg.publisher_contacts or '[]') %}
+                {% set owners = h.eduhub_theme_parse_json(pkg.publisher_contacts or '[]') %}
                 {% for owner in owners %}
                     {% if owner['name'] %}
                     <div style="margin-bottom: 10px;">
@@ -68,7 +68,7 @@
                 <h3>Reference Links</h3>
             </div>
             <div class="body">
-                {% set links = h.justicehub_theme_parse_json(pkg.links or '[]') %}
+                {% set links = h.eduhub_theme_parse_json(pkg.links or '[]') %}
                 <ol>
                 {% for link in links %}
                     {% set ref_link = link['link'] if 'http' in link['link']  else 'https://'+link['link'] %}

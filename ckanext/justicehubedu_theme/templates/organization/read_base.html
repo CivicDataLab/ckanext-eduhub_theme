@@ -47,7 +47,7 @@
             {% endif %}
             {% endblock %}
 
-            {% if not h.justicehub_theme_is_org_admin(c.userobj.name, c.group_dict) %}
+            {% if not h.eduhub_theme_is_org_admin(c.userobj.name, c.group_dict) %}
                 {% block follow %}
                 {% if c.userobj %}
                 <div class="col col-sm-2 col-xs-6 follow_button">
