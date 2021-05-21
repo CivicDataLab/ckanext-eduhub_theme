@@ -679,7 +679,7 @@ li.dropdown:focus {
 footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: var(--primary-background-color);
+  background-color: black;
 }
 
 footer h3 {
