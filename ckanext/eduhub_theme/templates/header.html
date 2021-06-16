@@ -3,7 +3,6 @@ step %}
 <div id="current_step" state="{{ step }}" style="display: none"></div>
 {% endif %} {% else %} {% set error_message = false %} {% endif %}
 <nav class="navbar navbar-default">
-
   {{ h.snippet('widget/auth/signup.html', id="signupModal") }} {{ h.snippet('widget/auth/login.html', id="loginModal")
   }} {{ h.snippet('widget/auth/forgot.html', id="forgotPasswordModal") }} {{ h.snippet('widget/auth/reset.html',
   id="resetPasswordModal") }} {{ h.snippet('widget/auth/feedback.html', id="feedbackModal") }} {{
@@ -12,8 +11,8 @@ step %}
     <div class="navbar-header">
       <img class="mobile-menu" src="/assets/icons/menu.svg" />
       <a class="navbar-brand" href="/">
-        <h2>Edu Hub</h2>
-        <!-- <img class="navbar-logo" alt="Brand" src="/assets/jh_logo.png" /> -->
+        <!-- <h2>Edu Hub</h2> -->
+        <img class="navbar-logo" alt="Brand" src="/assets/eh_logo.png" />
       </a>
 
       {% if not c.userobj %}
@@ -106,7 +105,7 @@ step %}
 
     <div id="side-nav" class="side-nav">
       <div class="side-nav__header">
-        <img class="side-nav__brand" src="/assets/jh_logo.png" alt="" />
+        <img class="side-nav__brand" src="/assets/eh_logo.png" alt="" />
         <a href="javascript:void(0)" class="closebtn">&times;</a>
       </div>
 
@@ -192,6 +191,6 @@ step %}
       </ul>
     </li>
     {% endif %}
-  </ul> 
+  </ul>
 </nav>
 {% endblock %} {% block header_site_search %} {% endblock %} #}
