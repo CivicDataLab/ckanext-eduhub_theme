@@ -1,7 +1,8 @@
 :root {
-  --primary-color: #edb40c;
+  --primary-color: #d19d18;
   --primary-color-dark: #f1b914;
-  --primary-background-color: #321c0f;
+  --primary-background-color: #271804;
+  --secondary-color: #EEDAA8;
 }
 
 body {
@@ -26,25 +27,42 @@ a:active {
 .btn-primary:active:focus,
 .btn-primary:visited {
   background-color: var(--primary-color);
-  color: white;
+  color: #111010;
   border-color: var(--primary-color);
   transition: all 0.1s ease-in;
 }
 
 .btn-primary:hover {
+  color: #111010;
   background-color: var(--primary-color-dark);
   border-color: var(--primary-color-dark);
 }
 
 .btn-primary-outline {
   background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary-outline:hover {
   color: var(--primary-color-dark);
   border-color: var(--primary-color-dark);
 }
 
-.btn-primary-outline:hover {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active:focus,
+.btn-secondary:visited {
+  background-color: var(--secondary-color);
+  color: #111010;
+  border-color: var(--secondary-color);
+  transition: all 0.1s ease-in;
+}
+
+.btn-secondary:hover {
+  color: #111010;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .navbar {
@@ -53,7 +71,7 @@ a:active {
 }
 
 .navbar-default {
-  background-color: white;
+  background-color: #fffefa;
 }
 
 .navbar-default .navbar-nav > li > a,
@@ -147,10 +165,15 @@ li.dropdown:focus {
   font-size: 16px;
   font-weight: 500;
   color: var(--primary-color);
-  display: block;
+  display: inline-flex;
+  align-items: center;
   transition: 0.3s;
   display: flex;
   align-items: center;
+}
+
+.side-nav > a .iconify {
+  margin-right: 10px;
 }
 
 .side-nav > a:hover {
@@ -292,7 +315,7 @@ li.dropdown:focus {
 /* hero section */
 
 .hero-section {
-  background-image: url('./assets/hero_background.png');
+  background-image: url('./assets/hero_background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -679,7 +702,7 @@ li.dropdown:focus {
 footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: black;
+  background-color: var(--primary-background-color);
 }
 
 footer h3 {
@@ -701,18 +724,14 @@ footer h3 {
 }
 
 .footer__branding__eh {
-  height: 48px;
+  height: 60px;
   width: auto;
   padding-right: 24px;
   border-right: 1px solid white;
 }
 
 .footer__branding_social {
-  width: 24px;
-  height: 24px;
   border-radius: 50%;
-  background-color: var(--primary-color);
-  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -722,17 +741,8 @@ footer h3 {
   cursor: pointer;
 }
 
-.github {
-  background-color: black;
-}
-
-.github img {
-  width: 27px;
-  height: 27px;
-}
-
 .footer__branding_social:first-of-type {
-  margin-left: 24px;
+  margin-left: 32px;
 }
 
 .footer__branding_social:hover {
@@ -776,7 +786,7 @@ footer h3 {
 }
 
 .links-row li a {
-  color: var(--primary-color);
+  color: #fffefa;
   font-weight: 500;
   font-size: 14px;
 }
@@ -809,8 +819,9 @@ footer h3 {
   margin-right: 32px;
 }
 
-.makers-row img {
-  transform: scale(1.4);
+.makers-row a > img {
+  height: 80px;
+  width: auto;
 }
 
 .error-message {
