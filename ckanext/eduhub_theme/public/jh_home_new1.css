@@ -2,7 +2,7 @@
   --primary-color: #d19d18;
   --primary-color-dark: #f1b914;
   --primary-background-color: #271804;
-  --secondary-color: #EEDAA8;
+  --secondary-color: #eedaa8;
 }
 
 body {
@@ -346,7 +346,7 @@ li.dropdown:focus {
   margin-bottom: 25px;
 }
 
-.hero-section__content .btn {
+.hero-section__content .btn, .contact-section .btn {
   text-transform: uppercase;
   font-weight: 500;
   margin-right: 15px;
@@ -697,6 +697,41 @@ li.dropdown:focus {
   margin: 0;
 }
 
+/* contact section */
+
+.contact-section {
+  background-color: #f1f1ef;
+  padding: 120px 0;
+}
+
+.contact-section h2 {
+  color: #111010;
+  font-size: 48px;
+  font-weight: 500;
+  padding-left: 28px;
+  border-left: 3px solid #6c666f;
+  margin-bottom: 36px;
+  letter-spacing: 1px;
+}
+
+.contact-section p {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.contact-section p span {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.contact-section img {
+  width: 100%;
+}
+
+.contact-section .explore-row {
+  margin-top: 40px;
+}
+
 /* footer */
 
 footer {
@@ -936,7 +971,7 @@ footer h3 {
     line-height: 25px;
   }
 
-  .hero-section__content .btn {
+  .hero-section__content .btn, .contact-section .btn {
     margin-right: 0;
     margin-left: 0;
     margin-top: 10px;
@@ -1119,6 +1154,24 @@ footer h3 {
 
   .item-addition > * {
     width: 100% !important;
+  }
+
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .contact-section p {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .contact-section img {
+    margin-top: 40px;
+    width: 100%;
   }
 }
 
