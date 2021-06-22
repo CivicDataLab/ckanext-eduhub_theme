@@ -3,6 +3,7 @@ const members = [
   { name: 'Akhil Sagiraju', image: '/assets/team/akhil.jpeg' },
   { name: 'Apoorv Anand', image: '/assets/team/apoorv.png' },
   { name: 'Gaurav Godhwani', image: '/assets/team/gaurav.jpg' },
+  { name: 'Jatin Baghel', image: '/assets/team/jatin.jpg' },
   // { name: 'Saurabh Karn', image: '/assets/team/saurabh.jpg' },
   { name: 'Shashank Sharma', image: '/assets/team/shashank.jpg' }
   // { name: 'Supriya Sankaran', image: '/assets/team/supriya.jpg' },
